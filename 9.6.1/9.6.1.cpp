@@ -29,13 +29,12 @@ int main()
             {
                 end=end+1;
             }
-            else {
-                //i += word.length() - 1;
-            }
-            std::cout << end<< '\n';
+           
         }
-        //first += word.length() - 1;
+            std::cout << end<< '\n';
     }
+        //first += word.length() - 1;
+    
     std::cout << end;
     
 
