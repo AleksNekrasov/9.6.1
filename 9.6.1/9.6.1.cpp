@@ -9,31 +9,28 @@ int main()
     std::string word;
 
     std::getline(std::cin, text);
-    std::cin >> word;
+    std::getline(std::cin, word);
 
     int end = 0;
     
-    for(int first = 0; first < text.length(); first++)
+    for(int startPos = 0; startPos < text.length(); startPos++)
     {
         
 
         bool checkbox = true;
         for ( int i = 0; i <= word.length(); i++)
         {
-            if (i + first >= text.length() || word[i] != text[i + first])
+            if (i + startPos >= text.length() || word[i] != text[i + startPos])
             {
-                checkbox = false; 
+                checkbox = false;
                 break;
             }
-            if(checkbox)
-            {
-                end=end+1;
-            }
-           
+            else end++;
         }
-            std::cout << end<< '\n';
+      
+        std::cout << end<< '\n';
     }
-        //first += word.length() - 1;
+        ;
     
     std::cout << end;
     
