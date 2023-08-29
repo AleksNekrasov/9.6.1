@@ -5,11 +5,15 @@
 #include <string>
 int main()
 {
+    setlocale(LC_ALL, "RUS");
     std::string text;
     std::string word;
 
-    std::getline(std::cin, text);
-    std::getline(std::cin, word);
+    //std::cin >> text;
+    
+    std::getline(std::cin,text);
+    std::cin.ignore();
+    std::getline(std::cin,word);
 
     int end = 0;
     
@@ -18,19 +22,22 @@ int main()
         
 
         bool checkbox = true;
-        for ( int i = 0; i <= word.length(); i++)
+        for ( int i = 0; i < word.length(); i++)
         {
-            if (i + startPos >= text.length() || word[i] != text[i + startPos])
+            if (i + startPos >= text.length() 
+                || word[i] != text[i + startPos])
             {
                 checkbox = false;
                 break;
             }
-            else end++;
+           
         }
-      
-        std::cout << end<< '\n';
+        if (checkbox) {
+            end++;
+        }
+       // std::cout << end<< '\n';
     }
-        ;
+        
     
     std::cout << end;
     
