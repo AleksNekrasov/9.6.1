@@ -24,6 +24,8 @@ int main()
         bool checkbox = true;
         for ( int i = 0; i < word.length(); i++)
         {
+           // if (i  >= word.length()                         посоветовал бот.
+            //    || word[i] != text[i + startPos])
             if (i + startPos >= text.length() 
                 || word[i] != text[i + startPos])
             {
