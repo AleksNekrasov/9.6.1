@@ -15,8 +15,8 @@ int main()
 
     std::getline(std::cin, text);
    // std::cin.ignore();
-    std::getline(std::cin, word);
-   // std::cin >> word;
+   // std::getline(std::cin, word);
+    std::cin >> word;
 
     int end = 0;
 
@@ -40,8 +40,14 @@ int main()
         }
         // std::cout << end<< '\n';
     }
-
-
+    if (text.length() == word.length() * end)
+    {
+        std::cout << "Yeah\n";
+    }
+    else
+    {
+        std::cout << "No\n";
+    }
     std::cout << end;
 
 
