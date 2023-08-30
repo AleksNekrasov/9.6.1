@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <iostream>
+#include <string>
 int main()
 {
     setlocale(LC_ALL, "RUS");
@@ -10,42 +12,43 @@ int main()
     std::string word;
 
     //std::cin >> text;
-    
-    std::getline(std::cin,text);
-    std::cin.ignore();
-    std::getline(std::cin,word);
+
+    std::getline(std::cin, text);
+   // std::cin.ignore();
+    std::getline(std::cin, word);
+   // std::cin >> word;
 
     int end = 0;
-    
-    for(int startPos = 0; startPos < text.length(); startPos++)
+
+    for (int startPos = 0; startPos < text.length(); startPos++)
     {
-        
+
 
         bool checkbox = true;
-        for ( int i = 0; i < word.length(); i++)
+        for (int i = 0; i < word.length(); i++)
         {
-           // if (i  >= word.length()                         посоветовал бот.
-            //    || word[i] != text[i + startPos])
-            if (i + startPos >= text.length() 
+            if (i + startPos >= text.length()
                 || word[i] != text[i + startPos])
             {
                 checkbox = false;
                 break;
             }
-           
+
         }
         if (checkbox) {
             end++;
         }
-       // std::cout << end<< '\n';
+        // std::cout << end<< '\n';
     }
-        
-    
+
+
     std::cout << end;
-    
+
 
     return 0;
 }
+
+
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
